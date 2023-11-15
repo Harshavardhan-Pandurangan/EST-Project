@@ -93,10 +93,6 @@ export default function CountryDetails(props) {
                         backgroundColor: "#A6CF98",
                         borderRadius: 20,
                         margin: 0,
-                        // display: "flex",
-                        // alignItems: "center",
-                        // justifyContent: "space-around",
-                        // border: "0.5rem solid #A6CF98",
                     }}
                     width={"100%"}
                 >
