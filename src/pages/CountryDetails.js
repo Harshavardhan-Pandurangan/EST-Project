@@ -16,6 +16,14 @@ export default function CountryDetails(props) {
     const [year, setYear] = useState(1975);
     const [type, setType] = useState("general");
     const [image_path, setImagePath] = useState("");
+    const [reason, setReason] = useState("");
+
+    const reasons = {
+        ivory: "/assets/images/ivory.png",
+        liberia: "/assets/images/liberia.png",
+        senegal: "/assets/images/senegal.png",
+        sierra: "/assets/images/sierra.png",
+    };
 
     const image_paths = {
         ivory: {
@@ -74,6 +82,7 @@ export default function CountryDetails(props) {
         setType(type_param);
 
         setImagePath(image_paths[country_param][type_param][year_param]);
+        setReason(reasons[country_param]);
     }, [country_param, year_param, type_param]);
 
     // listen for key clicks
@@ -222,8 +231,17 @@ export default function CountryDetails(props) {
                                 color: "white",
                             }}
                         >
-                            Reasoning goes here
+                            {/*Reasoning goes here
                             {/* use the country, type and states to show data */}
+                            <img
+                                src={reason}
+                                alt="Country reason map"
+                                style={{
+                                    width: "90%",
+                                    height: "90%",
+                                    objectFit: "contain",
+                                }}
+                            />
                         </Grid>
                         <Grid item xs={12} md={4.2}>
                             <img
