@@ -93,22 +93,40 @@ export default function CountryDetails(props) {
                         backgroundColor: "#A6CF98",
                         borderRadius: 20,
                         margin: 0,
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-around",
-                        border: "0.5rem solid #A6CF98",
+                        // display: "flex",
+                        // alignItems: "center",
+                        // justifyContent: "space-around",
+                        // border: "0.5rem solid #A6CF98",
                     }}
                     width={"100%"}
                 >
-                    <Typography variant="h3" xs={12}>
-                        {country}
-                    </Typography>
-                    <Typography variant="h2" xs={12}>
-                        Blah
-                    </Typography>
-                    <Typography variant="h3" xs={12}>
-                        {year}
-                    </Typography>
+                    <Grid
+                        item
+                        xs={12}
+                        md={4}
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Typography variant="h3">{country}</Typography>
+                    </Grid>
+                    <Grid item xs={12} md={4}>
+                        <Typography variant="h2">Blah</Typography>
+                    </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        md={4}
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Typography variant="h3">{year}</Typography>
+                    </Grid>
                 </Grid>
             </div>
 
@@ -124,15 +142,33 @@ export default function CountryDetails(props) {
                     height={"100%"}
                     width={"100%"}
                 >
-                    <Grid item xs={12} md={4}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={3.7}
+                        style={{
+                            backgroundColor: "#557C55",
+                            borderRadius: 20,
+                            margin: 8,
+                        }}
+                    >
                         Reasoning goes here
                         {/* use the country, type and states to show data */}
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={4.2}>
                         Map goes here
                         {/* use the country, year and type states to show data */}
                     </Grid>
-                    <Grid item xs={12} md={4}>
+                    <Grid
+                        item
+                        xs={12}
+                        md={3.8}
+                        style={{
+                            backgroundColor: "#557C55",
+                            borderRadius: 20,
+                            margin: 8,
+                        }}
+                    >
                         Cumulative graphs go here
                         {/* use the country, year and type states to show data */}
                     </Grid>
