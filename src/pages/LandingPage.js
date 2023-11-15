@@ -12,15 +12,17 @@ export default function LandingPage() {
 
     let navigate = useNavigate();
 
+    let years = [1975, 2000, 2013];
+
     // listen for key clicks
     useEffect(() => {
         const handleKeyDown = (e) => {
             switch (e.key) {
                 case "ArrowLeft":
-                    setYear(year - 1);
+                    setYear(years[(years.indexOf(year) + 2) % 3]);
                     break;
                 case "ArrowRight":
-                    setYear(year + 1);
+                    setYear(years[(years.indexOf(year) + 1) % 3]);
                     break;
                 case "ArrowUp":
                     if (type === "general") setType("forest");
@@ -143,6 +145,17 @@ export default function LandingPage() {
                                     height: "100%",
                                 }}
                             >
+                                <img
+                                    src="/assets/legend.png"
+                                    style={{
+                                        zIndex: 10,
+                                        width: "17%",
+                                        height: "30%",
+                                        objectFit: "contain",
+                                        position: "absolute",
+                                        marginLeft: "80%",
+                                    }}
+                                />
                                 <img
                                     src={image_paths["ivory"][type][year]}
                                     style={{
