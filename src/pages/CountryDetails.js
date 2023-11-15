@@ -146,6 +146,7 @@ export default function CountryDetails(props) {
                             backgroundColor: "#557C55",
                             borderRadius: 20,
                             margin: 8,
+                            color: "white",
                         }}
                     >
                         Reasoning goes here
@@ -163,6 +164,7 @@ export default function CountryDetails(props) {
                             backgroundColor: "#557C55",
                             borderRadius: 20,
                             margin: 8,
+                            color: "white",
                         }}
                     >
                         Cumulative graphs go here
