@@ -128,7 +128,63 @@ export default function LandingPage() {
                     width={"100%"}
                 >
                     <Grid item xs={12} md={6}>
-                        <Grid item></Grid>
+                        <Grid
+                            item
+                            style={{
+                                marginTop: "3vh",
+                                width: "100%",
+                                height: "80%",
+                            }}
+                        >
+                            <div
+                                style={{
+                                    position: "relative",
+                                    width: "100%",
+                                    height: "100%",
+                                }}
+                            >
+                                <img
+                                    src={image_paths["ivory"][type][year]}
+                                    style={{
+                                        zIndex: 3,
+                                        width: "90%",
+                                        height: "90%",
+                                        objectFit: "contain",
+                                        position: "absolute",
+                                    }}
+                                />
+                                <img
+                                    src={image_paths["liberia"][type][year]}
+                                    style={{
+                                        zIndex: 4,
+                                        width: "90%",
+                                        height: "90%",
+                                        objectFit: "contain",
+                                        position: "absolute",
+                                    }}
+                                />
+                                <img
+                                    src={image_paths["senegal"][type][year]}
+                                    style={{
+                                        zIndex: 5,
+                                        width: "90%",
+                                        height: "90%",
+                                        objectFit: "contain",
+                                        position: "absolute",
+                                    }}
+                                />
+                                <img
+                                    src={image_paths["sierra"][type][year]}
+                                    style={{
+                                        zIndex: 6,
+                                        width: "90%",
+                                        height: "90%",
+                                        objectFit: "contain",
+                                        position: "absolute",
+                                    }}
+                                />
+                            </div>
+                        </Grid>
                         <Grid item>
                             <Button
                                 variant="contained"
