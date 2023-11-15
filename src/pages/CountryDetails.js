@@ -14,11 +14,49 @@ export default function CountryDetails(props) {
     const [country, setCountry] = useState("ivory");
     const [year, setYear] = useState(1975);
     const [type, setType] = useState("general");
+    const [image_path, setImagePath] = useState("");
+
+    const image_paths = {
+        ivory: {
+            general: {
+                1975: "/assets/images/1975_ivory.svg",
+                2000: "/assets/images/2000_ivory.svg",
+                2013: "/assets/images/2013_ivory.svg",
+            },
+            forest: {},
+        },
+        liberia: {
+            general: {
+                1975: "/assets/images/1975_liberia.svg",
+                2000: "/assets/images/2000_liberia.svg",
+                2013: "/assets/images/2013_liberia.svg",
+            },
+            forest: {},
+        },
+        senegal: {
+            general: {
+                1975: "/assets/images/1975_senegal.svg",
+                2000: "/assets/images/2000_senegal.svg",
+                2013: "/assets/images/2013_senegal.svg",
+            },
+            forest: {},
+        },
+        sierra: {
+            general: {
+                1975: "/assets/images/1975_sierra.svg",
+                2000: "/assets/images/2000_sierra.svg",
+                2013: "/assets/images/2013_sierra.svg",
+            },
+            forest: {},
+        },
+    };
 
     useEffect(() => {
         setCountry(country_param);
         setYear(year_param);
         setType(type_param);
+
+        setImagePath(image_paths[country_param][type_param][year_param]);
     }, [country_param, year_param, type_param]);
 
     // listen for key clicks
@@ -106,7 +144,10 @@ export default function CountryDetails(props) {
                             justifyContent: "center",
                         }}
                     >
-                        <Typography variant="h3">{country}</Typography>
+                        {/* capitalise the country's first letter */}
+                        <Typography variant="h3">
+                            {country.charAt(0).toUpperCase() + country.slice(1)}
+                        </Typography>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Typography variant="h2">Blah</Typography>
@@ -153,8 +194,15 @@ export default function CountryDetails(props) {
                         {/* use the country, type and states to show data */}
                     </Grid>
                     <Grid item xs={12} md={4.2}>
-                        Map goes here
-                        {/* use the country, year and type states to show data */}
+                        <img
+                            src={image_path}
+                            alt="Country map"
+                            style={{
+                                width: "90%",
+                                height: "90%",
+                                objectFit: "contain",
+                            }}
+                        />
                     </Grid>
                     <Grid
                         item
